@@ -1,4 +1,3 @@
-
 /* ===== CSS CUSTOM PROPERTIES ===== */
 :root {
     /* Enhanced Color Palette */
@@ -8,7 +7,7 @@
     --glass-bg: rgba(255, 255, 255, 0.08);
     --glass-border: rgba(255, 255, 255, 0.12);
     --glass-hover: rgba(255, 255, 255, 0.15);
-    
+
     /* Brand Colors - Enhanced */
     --brand-primary: #64e0ff;
     --brand-secondary: #8b7fff;
@@ -17,14 +16,14 @@
     --brand-warning: #fbbf24;
     --brand-error: #f87171;
     --brand-info: #38bdf8;
-    
+
     /* Extended Text Colors */
     --text-primary: #ffffff;
     --text-secondary: rgba(255, 255, 255, 0.8);
     --text-muted: rgba(255, 255, 255, 0.5);
     --text-disabled: rgba(255, 255, 255, 0.3);
     --text-accent: var(--brand-primary);
-    
+
     /* Advanced Shadows */
     --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -34,7 +33,7 @@
     --shadow-2xl: 0 32px 80px rgba(0, 0, 0, 0.4);
     --shadow-glow: 0 0 20px rgba(100, 224, 255, 0.3);
     --shadow-glow-strong: 0 0 40px rgba(100, 224, 255, 0.5);
-    
+
     /* Border Radius */
     --radius-xs: 4px;
     --radius-sm: 8px;
@@ -43,7 +42,7 @@
     --radius-xl: 24px;
     --radius-2xl: 32px;
     --radius-full: 9999px;
-    
+
     /* Enhanced Spacing */
     --space-0: 0;
     --space-1: 0.25rem;
@@ -57,7 +56,7 @@
     --space-12: 3rem;
     --space-16: 4rem;
     --space-20: 5rem;
-    
+
     /* Typography Scale */
     --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
     --font-mono: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
@@ -69,13 +68,13 @@
     --font-weight-bold: 700;
     --font-weight-extrabold: 800;
     --font-weight-black: 900;
-    
+
     /* Enhanced Transitions */
     --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-slow: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    
+
     /* Breakpoints */
     --bp-xs: 480px;
     --bp-sm: 640px;
@@ -83,7 +82,7 @@
     --bp-lg: 1024px;
     --bp-xl: 1280px;
     --bp-2xl: 1536px;
-    
+
     /* Z-Index Scale */
     --z-dropdown: 1000;
     --z-sticky: 1020;
@@ -117,7 +116,7 @@ body {
     font-size: 1rem;
     line-height: 1.6;
     color: var(--text-primary);
-    background: 
+    background:
         radial-gradient(circle at 20% 20%, rgba(100, 224, 255, 0.15) 0%, transparent 50%),
         radial-gradient(circle at 80% 80%, rgba(139, 127, 255, 0.15) 0%, transparent 50%),
         radial-gradient(circle at 50% 50%, rgba(255, 107, 157, 0.1) 0%, transparent 50%),
@@ -192,11 +191,6 @@ body {
 .app-title {
     font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: var(--font-weight-extrabold);
-    background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary), var(--brand-accent));
-    background-size: 200% 200%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
     margin-bottom: var(--space-4);
     display: flex;
     align-items: center;
@@ -204,9 +198,17 @@ body {
     gap: var(--space-4);
     flex-wrap: wrap;
     position: relative;
-    animation: gradientShift 6s ease-in-out infinite;
     width: 100%;
     text-align: center;
+}
+
+.title-text {
+    background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary), var(--brand-accent));
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 6s ease-in-out infinite;
 }
 
 .subtitle-text {
@@ -219,19 +221,28 @@ body {
 }
 
 @keyframes gradientShift {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
 }
 
 .title-icon {
     font-size: 0.8em;
-    filter: grayscale(1);
+    color: var(--text-secondary);
+    /* Add a color */
     opacity: 0.8;
     transition: all var(--transition-normal);
 }
 
 .app-title:hover .title-icon {
-    filter: grayscale(0);
+    color: var(--text-primary);
+    /* Change color on hover */
     transform: scale(1.1);
 }
 
@@ -327,8 +338,13 @@ body {
 }
 
 @keyframes rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 /* ===== ENHANCED UPLOAD SECTION ===== */
@@ -1319,8 +1335,13 @@ body {
 }
 
 @keyframes spinAdvanced {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .loading-dots {
@@ -1337,14 +1358,23 @@ body {
     animation: loadingBounce 1.4s ease-in-out infinite both;
 }
 
-.loading-dots span:nth-child(1) { animation-delay: -0.32s; }
-.loading-dots span:nth-child(2) { animation-delay: -0.16s; }
+.loading-dots span:nth-child(1) {
+    animation-delay: -0.32s;
+}
+
+.loading-dots span:nth-child(2) {
+    animation-delay: -0.16s;
+}
 
 @keyframes loadingBounce {
-    0%, 80%, 100% {
+
+    0%,
+    80%,
+    100% {
         transform: scale(0);
         opacity: 0.5;
     }
+
     40% {
         transform: scale(1);
         opacity: 1;
@@ -1436,8 +1466,13 @@ body {
 
 /* ===== ANIMATIONS ===== */
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes fadeInUp {
@@ -1445,6 +1480,7 @@ body {
         opacity: 0;
         transform: translateY(40px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -1456,6 +1492,7 @@ body {
         opacity: 0;
         transform: translateY(-40px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -1467,6 +1504,7 @@ body {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -1474,7 +1512,9 @@ body {
 }
 
 @keyframes spin {
-    to { transform: rotate(360deg); }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 /* ===== ADVANCED RESPONSIVE DESIGN ===== */
@@ -1490,68 +1530,68 @@ body {
         padding: var(--space-4);
         gap: var(--space-6);
     }
-    
+
     .main-card {
         padding: var(--space-6);
     }
-    
+
     .app-title {
         font-size: clamp(1.75rem, 6vw, 2.5rem);
         flex-direction: column;
         gap: var(--space-2);
     }
 
-    
+
     .app-stats {
         gap: var(--space-4);
     }
-    
+
     .stat-item {
         padding: var(--space-3);
         min-width: 100px;
     }
-    
+
     .upload-area {
         padding: var(--space-6);
     }
-    
+
     .upload-icon {
         font-size: 3rem;
     }
-    
+
     .action-buttons {
         flex-direction: column;
     }
-    
+
     .search-btn {
         min-width: unset;
     }
-    
+
     .result-header {
         flex-direction: column;
         align-items: flex-start;
         gap: var(--space-3);
     }
-    
+
     .result-similarity {
         margin-left: 0;
         align-self: flex-end;
     }
-    
+
     .history-panel {
         width: 100%;
         right: -100%;
     }
-    
+
     .modal-content {
         margin: var(--space-4);
         max-width: calc(100vw - 2rem);
     }
-    
+
     .footer-content {
         gap: var(--space-3);
     }
-    
+
     .footer-links {
         gap: var(--space-3);
     }
@@ -1562,57 +1602,57 @@ body {
         padding: var(--space-3);
         gap: var(--space-4);
     }
-    
+
     .main-card {
         padding: var(--space-4);
     }
-    
+
     .app-header {
         margin-bottom: var(--space-4);
     }
-    
+
     .upload-area {
         padding: var(--space-4);
     }
-    
+
     .upload-title {
         font-size: 1.25rem;
     }
-    
+
     .upload-description {
         font-size: 0.875rem;
     }
-    
+
     .search-btn {
         font-size: 1.1rem;
         padding: var(--space-4) var(--space-6);
     }
-    
+
     .result-item {
         padding: var(--space-4);
     }
-    
+
     .result-info h4 {
         font-size: 1.25rem;
     }
-    
+
     .app-stats {
         flex-direction: column;
         gap: var(--space-3);
     }
-    
+
     .stat-item {
         flex-direction: row;
         gap: var(--space-3);
         padding: var(--space-3) var(--space-4);
     }
-    
+
     .modal-content {
         margin: var(--space-2);
         max-width: calc(100vw - 1rem);
         max-height: calc(100vh - 1rem);
     }
-    
+
     .modal-header,
     .modal-body {
         padding: var(--space-4);
@@ -1623,17 +1663,17 @@ body {
     .app-title {
         font-size: 1.5rem;
     }
-    
+
     .beta-badge {
         position: static;
         margin-left: var(--space-2);
     }
-    
+
     .upload-btn {
         font-size: 1rem;
         padding: var(--space-3) var(--space-5);
     }
-    
+
     .search-btn {
         font-size: 1rem;
     }
@@ -1641,6 +1681,7 @@ body {
 
 /* ===== PERFORMANCE OPTIMIZATIONS ===== */
 @media (prefers-reduced-motion: reduce) {
+
     *,
     *::before,
     *::after {
@@ -1648,7 +1689,7 @@ body {
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }
-    
+
     .upload-area::before,
     .result-item::before,
     .status-message::before {
@@ -1682,6 +1723,7 @@ a:focus-visible {
 
 /* ===== PRINT STYLES ===== */
 @media print {
+
     .loading-overlay,
     .history-panel,
     .fullscreen-modal,
@@ -1690,11 +1732,11 @@ a:focus-visible {
     .action-section {
         display: none !important;
     }
-    
+
     .app-container {
         padding: 0;
     }
-    
+
     .main-card {
         box-shadow: none;
         border: 1px solid #333;

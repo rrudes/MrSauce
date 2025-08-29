@@ -1,57 +1,60 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Anime Sauce Finder - AI-Powered Anime Recognition</title>
-    
+
     <!-- SEO and Meta Tags -->
-    <meta name="description" content="Find the source anime from any image using advanced AI recognition powered by trace.moe API. Upload images, get instant results with episode information.">
+    <meta name="description"
+        content="Find the source anime from any image using advanced AI recognition powered by trace.moe API. Upload images, get instant results with episode information.">
     <meta name="keywords" content="anime, sauce, finder, reverse image search, anime recognition, trace.moe, AI">
     <meta name="author" content="Anime Sauce Finder">
     <meta name="robots" content="index, follow">
-    
+
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Anime Sauce Finder - AI-Powered Anime Recognition">
     <meta property="og:description" content="Find the source anime from any image using advanced AI recognition">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Anime Sauce Finder">
-    
+
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Anime Sauce Finder">
     <meta name="twitter:description" content="Find the source anime from any image using AI">
-    
+
     <!-- Favicon and Icons -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔍</text></svg>">
-    
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔍</text></svg>">
+
     <!-- Performance and Loading -->
     <link rel="preconnect" href="https://api.trace.moe" crossorigin>
     <link rel="dns-prefetch" href="https://api.trace.moe">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
+
     <!-- Fonts - Optimized Loading -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+
     <!-- Stylesheets -->
     <link rel="stylesheet" href="style.css">
-    
+
     <!-- Theme Color -->
     <meta name="theme-color" content="#64e0ff">
 </head>
+
 <body>
     <!-- Skip to Main Content for Accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
-    
+
     <!-- Main Application Container -->
     <div class="app-container" role="main">
         <!-- Header Section -->
         <header class="app-header">
             <h1 class="app-title" id="app-title">
                 <span class="title-icon" aria-hidden="true">🔍</span>
-                MrSauce
+                <span class="title-text">MrSauce</span>
                 <div class="subtitle-text">Sauce Finder</div>
             </h1>
             <p class="app-subtitle">Discover the source of any anime screenshot instantly with AI</p>
@@ -70,20 +73,15 @@
         <!-- Main Content Card -->
         <main class="main-card" id="main-content">
             <!-- Hidden File Input -->
-            <input 
-                type="file" 
-                id="fileInput" 
-                accept="image/*,.jpg,.jpeg,.png,.gif,.webp,.bmp" 
-                aria-label="Upload anime image file"
-                style="display: none;"
-                multiple="false"
-            >
+            <input type="file" id="fileInput" accept="image/*,.jpg,.jpeg,.png,.gif,.webp,.bmp"
+                aria-label="Upload anime image file" style="display: none;" multiple="false">
 
             <!-- Upload Section -->
             <section class="upload-section" aria-labelledby="upload-heading">
                 <h2 id="upload-heading" class="visually-hidden">Upload Image</h2>
-                
-                <div class="upload-area" id="uploadArea" role="button" tabindex="0" aria-describedby="upload-instructions">
+
+                <div class="upload-area" id="uploadArea" role="button" tabindex="0"
+                    aria-describedby="upload-instructions">
                     <div class="upload-content">
                         <div class="upload-icon" aria-hidden="true">📸</div>
                         <h3 class="upload-title">Upload Your Anime Image</h3>
@@ -95,9 +93,10 @@
                             Choose Image
                         </button>
                     </div>
-                    
+
                     <!-- Upload Progress -->
-                    <div class="upload-progress" id="uploadProgress" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+                    <div class="upload-progress" id="uploadProgress" role="progressbar" aria-valuemin="0"
+                        aria-valuemax="100">
                         <div class="progress-bar" id="progressBar"></div>
                     </div>
                 </div>
@@ -108,15 +107,9 @@
                         <span class="divider-text">or</span>
                     </div>
                     <div class="url-input-container">
-                        <input 
-                            type="url" 
-                            id="urlInput" 
-                            class="url-input" 
+                        <input type="url" id="urlInput" class="url-input"
                             placeholder="Paste image URL here... (supports direct links, imgur, etc.)"
-                            aria-label="Image URL input"
-                            autocomplete="url"
-                            spellcheck="false"
-                        >
+                            aria-label="Image URL input" autocomplete="url" spellcheck="false">
                         <button type="button" class="url-paste-btn" id="urlPasteBtn" title="Paste from clipboard">
                             📋
                         </button>
@@ -130,10 +123,12 @@
                 <div class="preview-container">
                     <img id="previewImage" alt="Uploaded anime image preview" class="preview-image" loading="lazy">
                     <div class="preview-overlay">
-                        <button type="button" class="preview-action-btn fullscreen-btn" id="fullscreenBtn" title="View fullscreen" aria-label="View image in fullscreen">
+                        <button type="button" class="preview-action-btn fullscreen-btn" id="fullscreenBtn"
+                            title="View fullscreen" aria-label="View image in fullscreen">
                             🔍
                         </button>
-                        <button type="button" class="preview-action-btn remove-btn" id="removeBtn" title="Remove image" aria-label="Remove image">
+                        <button type="button" class="preview-action-btn remove-btn" id="removeBtn" title="Remove image"
+                            aria-label="Remove image">
                             ✕
                         </button>
                     </div>
@@ -195,9 +190,11 @@
         </aside>
 
         <!-- Image Fullscreen Modal -->
-        <div class="fullscreen-modal" id="fullscreenModal" role="dialog" aria-labelledby="fullscreen-title" aria-hidden="true">
+        <div class="fullscreen-modal" id="fullscreenModal" role="dialog" aria-labelledby="fullscreen-title"
+            aria-hidden="true">
             <div class="fullscreen-content">
-                <button type="button" class="fullscreen-close" id="fullscreenClose" aria-label="Close fullscreen view">✕</button>
+                <button type="button" class="fullscreen-close" id="fullscreenClose"
+                    aria-label="Close fullscreen view">✕</button>
                 <img id="fullscreenImage" alt="Fullscreen anime image" class="fullscreen-img">
             </div>
         </div>
@@ -207,19 +204,21 @@
             <div class="footer-content">
                 <div class="credits">
                     <p class="api-credit">
-                        Powered by <a href="https://trace.moe" target="_blank" rel="noopener noreferrer">trace.moe</a> API
+                        Powered by <a href="https://trace.moe" target="_blank" rel="noopener noreferrer">trace.moe</a>
+                        API
                         <span class="api-badge">Free & Open Source</span>
                     </p>
                     <p class="tech-credits">
-                        Built with modern web technologies • 
-                        <a href="https://anilist.co" target="_blank" rel="noopener noreferrer">AniList</a> database • 
+                        Built with modern web technologies •
+                        <a href="https://anilist.co" target="_blank" rel="noopener noreferrer">AniList</a> database •
                         Hosted on <a href="https://replit.com" target="_blank" rel="noopener noreferrer">Replit</a>
                     </p>
                 </div>
                 <div class="footer-links">
                     <button type="button" class="footer-link" id="aboutBtn">About</button>
                     <button type="button" class="footer-link" id="helpBtn">Help</button>
-                    <a href="https://github.com/soruly/trace.moe" target="_blank" rel="noopener noreferrer" class="footer-link">Source Code</a>
+                    <a href="https://github.com/soruly/trace.moe" target="_blank" rel="noopener noreferrer"
+                        class="footer-link">Source Code</a>
                 </div>
             </div>
         </footer>
@@ -293,8 +292,9 @@
                 <button type="button" class="modal-close" id="closeAboutBtn" aria-label="Close about">✕</button>
             </div>
             <div class="modal-body">
-                <p>Anime Sauce Finder is a free, open-source tool that helps you identify anime from screenshots using advanced AI technology.</p>
-                
+                <p>Anime Sauce Finder is a free, open-source tool that helps you identify anime from screenshots using
+                    advanced AI technology.</p>
+
                 <h3>🔧 Technology Stack</h3>
                 <ul>
                     <li><strong>Frontend:</strong> Vanilla JavaScript, CSS3, HTML5</li>
@@ -302,7 +302,7 @@
                     <li><strong>Database:</strong> AniList anime database</li>
                     <li><strong>Hosting:</strong> Replit Cloud Platform</li>
                 </ul>
-                
+
                 <h3>📊 Statistics</h3>
                 <ul>
                     <li>Over 99% accuracy rate</li>
@@ -310,10 +310,11 @@
                     <li>Processes millions of searches monthly</li>
                     <li>Average response time: &lt;3 seconds</li>
                 </ul>
-                
+
                 <h3>🙏 Credits</h3>
                 <ul>
-                    <li><a href="https://trace.moe" target="_blank" rel="noopener">trace.moe</a> - AI recognition engine</li>
+                    <li><a href="https://trace.moe" target="_blank" rel="noopener">trace.moe</a> - AI recognition engine
+                    </li>
                     <li><a href="https://anilist.co" target="_blank" rel="noopener">AniList</a> - Anime database</li>
                     <li><a href="https://replit.com" target="_blank" rel="noopener">Replit</a> - Hosting platform</li>
                     <li>Google Fonts - Typography</li>
@@ -324,7 +325,7 @@
 
     <!-- Scripts -->
     <script src="script.js" defer></script>
-    
+
     <!-- Performance Monitoring -->
     <script>
         // Performance monitoring
@@ -337,4 +338,5 @@
         });
     </script>
 </body>
+
 </html>
